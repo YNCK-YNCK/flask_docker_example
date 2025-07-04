@@ -39,7 +39,14 @@ docker run -p 5000:5000 flask-api
 
 ### 4. Anwendung testen
 
-Öffnen Sie einen Webbrowser und navigieren Sie zu http://localhost:5000, um die Flask-Anwendung zu sehen. 
+Öffnen Sie einen Webbrowser und navigieren Sie zu http://localhost:5000, um die Flask-Anwendung zu sehen. Für localhost:5000/api/settings ist neben GET auch POST möglich. Hier können Sie gerne ausprobieren, wie sie die Einstellungen über die API verändern können.
+
+Beispiel cURL command:
+curl -X POST -H "Content-Type: application/json" -d "{\"theme\":\"dark\",\"language\":\"de\"}" http://localhost:5000/api/settings
+
+{"message":"Settings updated successfully","settings":{"language":"de","notifications":true,"theme":"dark"}}
+
+Die Änderungen können dann direkt über cURL oder über den webbrowser abgerufen werden. Viel Spaß beim Ausprobieren! Vielleicht finden Sie ja noch ein kleines Geheimnis!
 
 ## Lizenz
 
